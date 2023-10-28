@@ -16,22 +16,23 @@ public class EletronicoDAO {
         try {
             conexao = Conect.getConect();
 
-            String sql = "SELECT * FROM clientes WHERE telefone = ?";
+            String sql = "SELECT * FROM eletronicos WHERE serie = ?";
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, telefone);
+            stmt.setString(1, serie);
 
             rs = stmt.executeQuery();
-            Cliente cli = null;
+            Eletronico eletro = null;
             
             if (rs.next()) {
-                cli = new Cliente(
-                    rs.getString("nome"),
-                    rs.getString("endereco"),
-                    rs.getString("telefone")
+            	eletro = new Eletronico(
+                    rs.getString("categoria"),
+                    rs.getString("marca"),
+                    rs.getString("modelo"),
+                    rs.getString("serie")
                 );
             }
 
-            return cli;
+            return eletro;
         } finally {
             if (rs != null) {
                 rs.close();
