@@ -1,5 +1,81 @@
 package view;
 
+
+
+import java.sql.SQLException;
+import database.ClienteDAO;
+import database.ConectException;
+import model.Cliente;
+import java.util.Scanner;
+
+public class teste {
+    public static void main(String[] args) {
+        ClienteDAO clienteDAO = new ClienteDAO();
+        
+        @SuppressWarnings("resource")
+		Scanner leitura = new Scanner(System.in);
+
+        try {
+        	
+        	System.out.printf("digite o numero do cliente que deseja buscar: ");
+        	
+            String buscarTelefone = leitura.nextLine();
+
+
+            Cliente clienteEncontrado = clienteDAO.buscarCliente(buscarTelefone);
+
+            if (clienteEncontrado != null)
+            {
+            	System.out.println();
+                System.out.println("Cliente Encontrado:");
+                System.out.println("Nome: " + clienteEncontrado.getNome());
+                System.out.println("Endereço: " + clienteEncontrado.getEndereco());
+                System.out.println("Telefone: " + clienteEncontrado.getNumeroTelefone());
+            } else {
+                System.out.println("Cliente não encontrado com o número de telefone: " + buscarTelefone);
+            }
+        } catch (SQLException | ConectException e) {
+            e.printStackTrace();
+            System.out.println();
+            
+            System.err.println("Erro ao buscar cliente: " + e.getMessage());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -61,3 +137,4 @@ public class teste {
         }
     }
 }
+*/

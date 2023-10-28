@@ -19,7 +19,7 @@ public class Conect
             if (conn == null) {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection(url, user, password);
-                System.out.printf("conectado");
+                System.out.println("Banco de dados Conectado com Sucesso!!");
             }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
