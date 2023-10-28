@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class Conect 
 {
-    private static final String url = "jdbc:mysql://localhost:3306/cliente";
+    private static final String url = "jdbc:mysql://localhost:3306/manutencao_eletronicos";
     private static final String user = "root";
     private static final String password = "7415369";
     
@@ -40,6 +40,13 @@ public class Conect
 			}
 			
 		}
+	}
+
+
+
+	public static Connection getConexao() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 

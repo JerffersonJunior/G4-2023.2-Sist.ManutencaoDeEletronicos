@@ -8,8 +8,9 @@ import database.Conect; // Importa a classe Connect da package database
 import database.ConectException;
 
 public class teste {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    @SuppressWarnings("resource")
+	public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
 
         Connection conexao = null;
         PreparedStatement stmt = null;
@@ -17,11 +18,11 @@ public class teste {
         try {
             // Solicita ao usuário os dados a serem inseridos
             System.out.print("Nome: ");
-            String nome = scanner.nextLine();
+            String nome = ler.nextLine();
             System.out.print("Telefone: ");
-            String telefone = scanner.nextLine();
+            String telefone = ler.nextLine();
             System.out.print("Endereço: ");
-            String endereco = scanner.nextLine();
+            String endereco = ler.nextLine();
 
             // Cria a instrução SQL para inserir os dados na tabela
             String sql = "INSERT INTO clientes (nome, telefone, endereco) VALUES (?, ?, ?)";
@@ -39,7 +40,7 @@ public class teste {
 
             // Executa a instrução SQL para inserir os dados na tabela
             stmt.executeUpdate();
-
+            System.out.println("\n");
             System.out.println("Dados inseridos com sucesso na tabela.");
         } catch (SQLException e) {
             System.err.println("Erro ao inserir dados na tabela: " + e.getMessage());
