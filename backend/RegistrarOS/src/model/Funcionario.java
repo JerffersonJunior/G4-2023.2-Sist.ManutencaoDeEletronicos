@@ -6,18 +6,18 @@ public class Funcionario
 	private String endereco;
 	private String numeroTelefone;
 	private String email;
-	private String serie;
+	private String senha;
 	private String tipoFuncionario;
 	
 	
-	public Funcionario(String nome, String endereco, String numeroTelefone, String email, String serie,
+	public Funcionario(String nome, String endereco, String numeroTelefone, String email, String senha,
 			String tipoFuncionario) {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
 		this.numeroTelefone = numeroTelefone;
 		this.email = email;
-		this.serie = serie;
+		this.senha = senha;
 		this.tipoFuncionario = tipoFuncionario;
 	}
 	
@@ -46,11 +46,11 @@ public class Funcionario
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getSerie() {
-		return serie;
+	public String getSenha() {
+		return senha;
 	}
-	public void setSerie(String serie) {
-		this.serie = serie;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	public String getTipoFuncionario() {
 		return tipoFuncionario;
