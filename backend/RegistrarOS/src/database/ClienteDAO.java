@@ -8,7 +8,7 @@ import model.Cliente;
 
 public class ClienteDAO {
     
-    public Cliente buscarCliente(String telefone) throws SQLException, ConectException {
+    public Cliente buscaCliente(String telefone) throws SQLException, ConectException {
         Connection conexao = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;

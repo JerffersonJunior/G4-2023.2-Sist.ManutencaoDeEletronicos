@@ -5,13 +5,6 @@ package view;
 
 
 
-
-
-
-
-
-
-
 /*-----Busca Cliente-----*/
 
 
