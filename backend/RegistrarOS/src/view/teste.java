@@ -2,6 +2,20 @@ package view;
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*-----Busca Cliente-----*/
+
+
+/*
 import java.sql.SQLException;
 import database.ClienteDAO;
 import database.ConectException;
@@ -44,7 +58,7 @@ public class teste {
 }
 
 
-
+*/
 
 
 

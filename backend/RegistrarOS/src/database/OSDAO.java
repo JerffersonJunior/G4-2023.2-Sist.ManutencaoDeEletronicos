@@ -1,5 +1,6 @@
 package database;
 
-public class OSDAO {
+public class OSDAO 
+{
 
 }
