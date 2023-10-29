@@ -13,9 +13,19 @@ public class Eletronico
 		this.modelo = modelo;
 		this.serie = serie;
 	}
+	
+	/*segundo construtor*/
+	
+	
+	
 	public String getCategoria() {
 		return categoria;
 	}
+	public Eletronico(String serie) {
+		super();
+		this.serie = serie;
+	}
+
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}

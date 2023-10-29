@@ -7,54 +7,51 @@ import model.Funcionario;
 
 public class FuncionarioDAO
 {
-	
-
-	
-
-	public class ClienteDAO {
-	    
-	    public Funcionario buscaTecnico(String telefone) throws SQLException, ConectException {
-	        Connection conexao = null;
-	        PreparedStatement stmt = null;
+	public Funcionario buscaTecnico(String nome) throws SQLException, ConectException 
+	{
+		
+		Connection conexao = null;
+		PreparedStatement stmt = null;
 	        ResultSet rs = null;
 	        
 	        try {
 	            conexao = Conect.getConect();
 
-	            String sql = "SELECT * FROM Funcionarios WHERE telefone = ?";
+	            String sql = "SELECT * FROM Funcionarios WHERE nome = ?";
 	            stmt = conexao.prepareStatement(sql);
-	            stmt.setString(1, telefone);
+	            stmt.setString(1, nome);
 
 	            rs = stmt.executeQuery();
-	            Funcionario cli = null;
+	            Funcionario func = null;
 	            
 	            if (rs.next()) {
-	                cli = new Funcionario(
-	                    rs.getString("nome"),
-	                    rs.getString("endereco"),
-	                    rs.getString("telefone"),
-	                    rs.getString("email"),
-	                    rs.getString("senha"),
-	                    rs.getString("tipoFuncionario")
+	                func = new Funcionario(
+	                    rs.getString("nome")
+
 	                    
 	                );
 	            }
 
-	            return cli;
-	        } finally {
-	            if (rs != null) {
-	                rs.close();
+	            return func;
+	        }
+	        finally
+	        {
+	            if (rs != null) 
+	            {
+	            	rs.close();
 	            }
-	            if (stmt != null) {
+	            if (stmt != null) 
+	            {
 	                stmt.close();
 	            }
-	            if (conexao != null) {
+	            if (conexao != null) 
+	            {
 	                conexao.close();
 	            }
 	        }
 	    }
-	}
-
-
-
 }
+
+
+
+

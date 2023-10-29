@@ -25,9 +25,6 @@ public class EletronicoDAO {
             
             if (rs.next()) {
             	eletro = new Eletronico(
-                    rs.getString("categoria"),
-                    rs.getString("marca"),
-                    rs.getString("modelo"),
                     rs.getString("serie")
                 );
             }

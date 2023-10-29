@@ -10,8 +10,8 @@ public class Funcionario
 	private String tipoFuncionario;
 	
 	
-	public Funcionario(String nome, String endereco, String numeroTelefone, String email, String senha,
-			String tipoFuncionario) {
+	public Funcionario(String nome, String endereco, String numeroTelefone, String email, String senha,String tipoFuncionario) 
+	{
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
@@ -20,6 +20,13 @@ public class Funcionario
 		this.senha = senha;
 		this.tipoFuncionario = tipoFuncionario;
 	}
+	
+	/* segundo contrutor*/
+	public Funcionario(String nome) {
+		super();
+		this.nome = nome;
+	}
+	
 	
 	
 	public String getNome() {
@@ -58,6 +65,9 @@ public class Funcionario
 	public void setTipoFuncionario(String tipoFuncionario) {
 		this.tipoFuncionario = tipoFuncionario;
 	}
+
+
+	
 	
 	
 	

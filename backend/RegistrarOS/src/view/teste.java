@@ -2,11 +2,98 @@ package view;
 
 
 
+import java.sql.SQLException;
+import java.util.Scanner;
+import database.OSDAO;
+
+
+public class teste {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Inserir uma nova OS");
+        System.out.println("Informe o ID da OS: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consuma a quebra de linha
+
+        System.out.println("Informe a data de início: ");
+        String dataInicio = scanner.nextLine();
+
+        System.out.println("Informe a reclamação: ");
+        String reclamacao = scanner.nextLine();
+
+        System.out.println("Informe a análise do técnico: ");
+        String analiseTecnico = scanner.nextLine();
+
+        System.out.println("Informe o status: ");
+        String status = scanner.nextLine();
+
+        System.out.println("Informe a data de fechamento: ");
+        String dataFechamento = scanner.nextLine();
+
+        System.out.println("Informe o valor da manutenção: ");
+        float valorManutencao = scanner.nextFloat();
+
+        OSDAO osdao = new OSDAO();
+        try {
+            osdao.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
+            System.out.println("OS inserida com sucesso no banco de dados.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Erro ao inserir a OS: " + e.getMessage());
+        }
+    }
+}
+
+
+
+
+/*
+import java.sql.SQLException;
+import database.FuncionarioDAO;
+import database.ConectException;
+import model.Funcionario;
+import java.util.Scanner;
+
+public class teste {
+    public static void main(String[] args) {
+        FuncionarioDAO FucionarioDAO = new FuncionarioDAO();
+        
+        @SuppressWarnings("resource")
+		Scanner leitura = new Scanner(System.in);
+
+        try {
+        	
+        	System.out.printf("digite o numero do cliente que deseja buscar: ");
+        	
+            String buscarTelefone = leitura.nextLine();
+
+
+            Funcionario funcionarioEncontrado = FuncionarioDAO.buscaTecnico(buscaTecnico);
+
+            if (funcionarioEncontrado != null)
+            {
+            	System.out.println();
+                System.out.println("Cliente Encontrado:");
+                System.out.println("Nome: " + funcionarioEncontrado.getNome());
+                System.out.println("Endereço: " + funcionarioEncontrado.getEndereco());
+                System.out.println("Telefone: " + funcionarioEncontrado.getNumeroTelefone());
+            } else {
+                System.out.println("Cliente não encontrado com o número de telefone: " + buscarTelefone);
+            }
+        } catch (SQLException | ConectException e) {
+            e.printStackTrace();
+            System.out.println();
+            
+            System.err.println("Erro ao buscar cliente: " + e.getMessage());
+        }
+    }
+}
+*/
 
 
 
 /*-----Busca Cliente-----*/
-
 
 /*
 import java.sql.SQLException;
@@ -29,7 +116,7 @@ public class teste {
             String buscarTelefone = leitura.nextLine();
 
 
-            Cliente clienteEncontrado = clienteDAO.buscarCliente(buscarTelefone);
+            Cliente clienteEncontrado = clienteDAO.buscaCliente(buscarTelefone);
 
             if (clienteEncontrado != null)
             {
@@ -49,7 +136,6 @@ public class teste {
         }
     }
 }
-
 
 */
 
