@@ -62,7 +62,7 @@ public class OSDAO {
         try {
             conexao = Conect.getConect();
 
-            String sql = "SELECT clientes.nome FROM clientes, os WHERE os.clientes_telefone = clientes.telefone";
+            String sql = "SELECT * FROM os WHERE id = ?";
             stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
 
@@ -95,6 +95,34 @@ public class OSDAO {
             }
         }
     }
+	
+	
+	
+	
+	public OS buscaOSS(int id) throws SQLException, ConectException {
+	    try (Connection conexao = Conect.getConect();
+	         PreparedStatement stmt = conexao.prepareStatement("SELECT * FROM os WHERE id = ?")) {
+
+	        stmt.setInt(1, id);
+
+	        try (ResultSet rs = stmt.executeQuery()) {
+	            OS OSD = null;
+	            if (rs.next()) {
+	                OSD = new OS(
+	                    rs.getInt("id"),
+	                    rs.getString("dataInicio"),
+	                    rs.getString("reclamacao"),
+	                    rs.getString("analiseTecnico"),
+	                    rs.getString("status"),
+	                    rs.getString("dataFechamento"),
+	                    rs.getFloat("valorManutencao")
+	                );
+	            }
+	            return OSD;
+	        }
+	    }
+	}
+
 }
 
 

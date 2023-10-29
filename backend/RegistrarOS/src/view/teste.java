@@ -2,25 +2,92 @@ package view;
 
 
 
+/*
+import database.*;
+import model.*;
+
+
+import java.util.Scanner;
+import controller.Controladora;
+import java.sql.SQLException;
+
+import java.util.Scanner;
+
+public class teste {
+   
+	public static void main(String[] args) throws SQLException, ConectException {
+        Scanner ler = new Scanner(System.in);
+
+        System.out.println("Digite o ID da OS:");
+        int id = ler.nextInt();
+
+        Controladora controladora = new Controladora();
+        OSDAO OSD = new OSDAO();
+
+        boolean existeOS = controladora.existeOS(id);
+
+        if (existeOS) {
+            System.out.println("A OS com ID " + id + " existe. Detalhes da OS:");
+
+            // Agora, vamos buscar e imprimir os detalhes da OS com base no ID fornecido
+            OS os = OSD.buscaOSS(id);
+
+
+            if (os != null) {
+                System.out.println("ID: " + os.getId());
+                System.out.println("Data de Início: " + os.getDataInicio());
+                System.out.println("Reclamação: " + os.getReclamacao());
+                System.out.println("Análise do Técnico: " + os.getAnaliseTecnico());
+                System.out.println("Status: " + os.getStatus());
+                System.out.println("Data de Fechamento: " + os.getDataFechamento());
+                System.out.println("Valor da Manutenção: " + os.getValorManutencao());
+            } else {
+                System.out.println("Detalhes da OS não encontrados.");
+            }
+        } else {
+            System.out.println("A OS com ID " + id + " não existe.");
+        }
+
+      
+    }
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+/*
 import java.sql.SQLException;
 import java.util.Scanner;
 import database.OSDAO;
-
-
+import controller.Controladora;
 public class teste {
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
-
+        Controladora contro = new Controladora();
         System.out.println("Inserir uma nova OS");
+
         System.out.println("Informe o ID da OS: ");
         int id = scanner.nextInt();
         scanner.nextLine(); // Consuma a quebra de linha
 
         System.out.println("Informe a data de início: ");
         String dataInicio = scanner.nextLine();
+        contro.dataInicioPreenchido(dataInicio); // Verifica se a data de início foi preenchida
 
         System.out.println("Informe a reclamação: ");
         String reclamacao = scanner.nextLine();
+        contro.reclamacaoPreenchido(reclamacao); // Verifica se a reclamação foi preenchida
 
         System.out.println("Informe a análise do técnico: ");
         String analiseTecnico = scanner.nextLine();
@@ -33,10 +100,12 @@ public class teste {
 
         System.out.println("Informe o valor da manutenção: ");
         float valorManutencao = scanner.nextFloat();
+        scanner.close(); // Fechar o scanner
 
-        OSDAO osdao = new OSDAO();
+        OSDAO OSD = new OSDAO();
+
         try {
-            osdao.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
+            OSD.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
             System.out.println("OS inserida com sucesso no banco de dados.");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -45,6 +114,9 @@ public class teste {
     }
 }
 
+
+
+/*-----busca funcionario-----*/
 
 
 
@@ -93,9 +165,11 @@ public class teste {
 
 
 
+
 /*-----Busca Cliente-----*/
 
 /*
+
 import java.sql.SQLException;
 import database.ClienteDAO;
 import database.ConectException;
@@ -137,8 +211,8 @@ public class teste {
     }
 }
 
-*/
 
+*/
 
 
 
