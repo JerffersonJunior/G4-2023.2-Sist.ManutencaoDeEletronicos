@@ -7,7 +7,7 @@ import model.Funcionario;
 
 public class FuncionarioDAO
 {
-	public Funcionario buscaTecnico(String nome) throws SQLException, ConectException 
+	public static  Funcionario buscaTecnico(String nome) throws SQLException, ConectException 
 	{
 		
 		Connection conexao = null;
@@ -17,7 +17,7 @@ public class FuncionarioDAO
 	        try {
 	            conexao = Conect.getConect();
 
-	            String sql = "SELECT * FROM Funcionarios WHERE nome = ?";
+	            String sql = "SELECT nome FROM Funcionarios WHERE nome = ?";
 	            stmt = conexao.prepareStatement(sql);
 	            stmt.setString(1, nome);
 
@@ -27,6 +27,13 @@ public class FuncionarioDAO
 	            if (rs.next()) {
 	                func = new Funcionario(
 	                    rs.getString("nome")
+	                    /*
+	                    rs.getString("endereco"),
+	                    rs.getString("telefone"),
+	                    rs.getString("email"),
+	                    rs.getString("senha"),
+	                    rs.getString("tipofuncionario")
+	                    */
 
 	                    
 	                );

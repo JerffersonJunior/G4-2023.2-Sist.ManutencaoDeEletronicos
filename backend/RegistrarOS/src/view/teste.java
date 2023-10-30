@@ -1,5 +1,60 @@
 package view;
 
+import database.*;
+import model.*;
+
+
+import java.util.Scanner;
+import controller.Controladora;
+import java.sql.SQLException;
+
+import java.util.Scanner;
+
+
+
+
+/*
+public class teste
+{
+	public static void main(String[] args)throws SQLException, ConectException
+	{
+		Scanner leitura = new Scanner(System.in);
+		
+		String buscaTelefone = leitura.nextLine();
+		
+		Controladora control = new Controladora();
+		
+		String result =control.buscaNome(buscaTelefone);
+		
+		System.out.println("resultado: " + result);
+		
+		
+		
+		
+		
+	}
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -29,7 +84,7 @@ public class teste {
         if (existeOS) {
             System.out.println("A OS com ID " + id + " existe. Detalhes da OS:");
 
-            // Agora, vamos buscar e imprimir os detalhes da OS com base no ID fornecido
+           
             OS os = OSD.buscaOSS(id);
 
 
@@ -61,11 +116,11 @@ public class teste {
 
 
 
+/*-----inserindo dados na OS-----*/
 
 
 
 
-/*
 import java.sql.SQLException;
 import java.util.Scanner;
 import database.OSDAO;
@@ -77,17 +132,14 @@ public class teste {
         Controladora contro = new Controladora();
         System.out.println("Inserir uma nova OS");
 
-        System.out.println("Informe o ID da OS: ");
-        int id = scanner.nextInt();
-        scanner.nextLine(); // Consuma a quebra de linha
+
 
         System.out.println("Informe a data de início: ");
         String dataInicio = scanner.nextLine();
-        contro.dataInicioPreenchido(dataInicio); // Verifica se a data de início foi preenchida
+
 
         System.out.println("Informe a reclamação: ");
         String reclamacao = scanner.nextLine();
-        contro.reclamacaoPreenchido(reclamacao); // Verifica se a reclamação foi preenchida
 
         System.out.println("Informe a análise do técnico: ");
         String analiseTecnico = scanner.nextLine();
@@ -105,7 +157,7 @@ public class teste {
         OSDAO OSD = new OSDAO();
 
         try {
-            OSD.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
+            OSD.adicionarOS(0, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
             System.out.println("OS inserida com sucesso no banco de dados.");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -116,7 +168,12 @@ public class teste {
 
 
 
+
+
 /*-----busca funcionario-----*/
+
+
+
 
 
 
@@ -129,29 +186,33 @@ import java.util.Scanner;
 
 public class teste {
     public static void main(String[] args) {
-        FuncionarioDAO FucionarioDAO = new FuncionarioDAO();
-        
-        @SuppressWarnings("resource")
+  
 		Scanner leitura = new Scanner(System.in);
+		/*
+		FuncionarioDAO funcDAO = new FuncionarioDAO();
+		
 
         try {
         	
-        	System.out.printf("digite o numero do cliente que deseja buscar: ");
+        	System.out.printf("digite nome do funcionario que deseja buscar: ");
         	
-            String buscarTelefone = leitura.nextLine();
+            String buscaNome = leitura.nextLine();
 
 
-            Funcionario funcionarioEncontrado = FuncionarioDAO.buscaTecnico(buscaTecnico);
+            Funcionario funcionarioEncontrado = FuncionarioDAO.buscaTecnico(buscaNome);
 
             if (funcionarioEncontrado != null)
             {
             	System.out.println();
-                System.out.println("Cliente Encontrado:");
+                System.out.println("Funcionario Encontrado:");
                 System.out.println("Nome: " + funcionarioEncontrado.getNome());
+                /*
                 System.out.println("Endereço: " + funcionarioEncontrado.getEndereco());
                 System.out.println("Telefone: " + funcionarioEncontrado.getNumeroTelefone());
+                
             } else {
-                System.out.println("Cliente não encontrado com o número de telefone: " + buscarTelefone);
+                System.out.println("Funcionario não registrado no sistema! ");
+                System.out.println("com o nome de " + buscaNome + ".");
             }
         } catch (SQLException | ConectException e) {
             e.printStackTrace();
@@ -176,9 +237,11 @@ import database.ConectException;
 import model.Cliente;
 import java.util.Scanner;
 
+
 public class teste {
     public static void main(String[] args) {
         ClienteDAO clienteDAO = new ClienteDAO();
+        
         
         @SuppressWarnings("resource")
 		Scanner leitura = new Scanner(System.in);
@@ -239,8 +302,7 @@ public class teste {
 
 
 
-
-
+/*----- inserindo cliente-----*/
 
 /*
 import java.sql.Connection;
@@ -259,7 +321,7 @@ public class teste {
         PreparedStatement stmt = null;
 
         try {
-            // Solicita ao usuário os dados a serem inseridos
+
             System.out.print("Nome: ");
             String nome = ler.nextLine();
             System.out.print("Telefone: ");
@@ -267,21 +329,19 @@ public class teste {
             System.out.print("Endereço: ");
             String endereco = ler.nextLine();
 
-            // Cria a instrução SQL para inserir os dados na tabela
             String sql = "INSERT INTO clientes (nome, telefone, endereco) VALUES (?, ?, ?)";
 
-            // Obtém a conexão com o banco de dados usando a classe Connect
             conexao = Conect.getConect();
 
-            // Prepara a instrução SQL com a conexão
+     
             stmt = conexao.prepareStatement(sql);
 
-            // Define os valores dos parâmetros da instrução
+     
             stmt.setString(1, nome);
             stmt.setString(2, telefone);
             stmt.setString(3, endereco);
 
-            // Executa a instrução SQL para inserir os dados na tabela
+       
             stmt.executeUpdate();
             System.out.println("\n");
             System.out.println("Dados inseridos com sucesso na tabela.");
@@ -304,4 +364,5 @@ public class teste {
         }
     }
 }
+
 */

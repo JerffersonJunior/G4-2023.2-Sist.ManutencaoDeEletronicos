@@ -25,16 +25,15 @@ public class OSDAO {
 				e.printStackTrace();
 			}
 			
-			String sql = "INSERT INTO os(id, datainicio, reclamacao, analisetecnico, status, datadefechamento, valormanutencao)VALUES (?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO os(datainicio, reclamacao, analisetecnico, status, datafechamento, valormanutencao)VALUES (?,?,?,?,?,?)";
 			
 		    PreparedStatement stmt = conexao.prepareStatement(sql);
-		    stmt.setInt(1, id);
-		    stmt.setString(2, dataInicio);
-		    stmt.setString(3, reclamacao);
-		    stmt.setString(4, analiseTecnico);
-		    stmt.setString(5, status);
-		    stmt.setString(6, dataFechamento);
-		    stmt.setFloat(7, valorManutencao);
+		    stmt.setString(1, dataInicio);
+		    stmt.setString(2, reclamacao);
+		    stmt.setString(3, analiseTecnico);
+		    stmt.setString(4, status);
+		    stmt.setString(5, dataFechamento);
+		    stmt.setFloat(6, valorManutencao);
 		    
 		    
 		    stmt.execute();
@@ -96,32 +95,39 @@ public class OSDAO {
         }
     }
 	
-	
-	
-	
-	public OS buscaOSS(int id) throws SQLException, ConectException {
-	    try (Connection conexao = Conect.getConect();
-	         PreparedStatement stmt = conexao.prepareStatement("SELECT * FROM os WHERE id = ?")) {
+	public String buscaNome(String telefone) throws ConectException, SQLException
+	{
+		Connection conexao = Conect.getConect();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        
+        
+        String sql = "SELECT nome FROM clientes WHERE telefone = ?";
+        stmt = conexao.prepareStatement(sql);
+        stmt.setString(1, telefone);
 
-	        stmt.setInt(1, id);
+        rs = stmt.executeQuery();
+        
+        
+        if (rs.next()) {
+            
+        	System.out.println("nome: " + rs.getString("nome"));
+               
+        }
+        else
+        {
+        	return "Cliente nao encontrado";
+        }
 
-	        try (ResultSet rs = stmt.executeQuery()) {
-	            OS OSD = null;
-	            if (rs.next()) {
-	                OSD = new OS(
-	                    rs.getInt("id"),
-	                    rs.getString("dataInicio"),
-	                    rs.getString("reclamacao"),
-	                    rs.getString("analiseTecnico"),
-	                    rs.getString("status"),
-	                    rs.getString("dataFechamento"),
-	                    rs.getFloat("valorManutencao")
-	                );
-	            }
-	            return OSD;
-	        }
-	    }
+
+		return "Cliente nao encontrado";
 	}
+	
+	
+	
+	
+
 
 }
 
