@@ -123,10 +123,10 @@ public class teste {
 
 import java.sql.SQLException;
 import java.util.Scanner;
-import database.OSDAO;
+
 import controller.Controladora;
 public class teste {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ConectException {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         Controladora contro = new Controladora();
@@ -154,10 +154,9 @@ public class teste {
         float valorManutencao = scanner.nextFloat();
         scanner.close(); // Fechar o scanner
 
-        OSDAO OSD = new OSDAO();
 
         try {
-            OSD.adicionarOS(0, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
+            contro.adicionarOS(0, dataInicio, reclamacao, analiseTecnico, status, null, valorManutencao);
             System.out.println("OS inserida com sucesso no banco de dados.");
         } catch (SQLException e) {
             e.printStackTrace();

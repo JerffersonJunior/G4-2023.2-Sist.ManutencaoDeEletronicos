@@ -89,7 +89,15 @@ public class Controladora
 	}
 	
 
-	
+    public void adicionarOS(int id, String dataInicio, String reclamacao, String analiseTecnico, String status, String dataFechamento, float valorManutencao) throws SQLException, ConectException 
+    {
+    	
+        OSD.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
+    }
+    
+
+
+
 	
 
 
