@@ -112,7 +112,7 @@ public class OSDAO {
         
         if (rs.next()) {
             
-        	System.out.println("nome: " + rs.getString("nome"));
+        	return rs.getString("nome");
                
         }
         else
@@ -121,7 +121,7 @@ public class OSDAO {
         }
 
 
-		return "Cliente nao encontrado";
+		
 	}
 	
 	

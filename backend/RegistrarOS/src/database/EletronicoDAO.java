@@ -8,7 +8,7 @@ import model.Eletronico;
 
 public class EletronicoDAO {
 	
-	public Eletronico buscaEletronico(String serie) throws SQLException, ConectException {
+	public static boolean buscaEletronico(String serie) throws SQLException, ConectException {
         Connection conexao = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -27,9 +27,12 @@ public class EletronicoDAO {
             	eletro = new Eletronico(
                     rs.getString("serie")
                 );
+            	
+            	return true;
             }
 
-            return eletro;
+            return false;
+            
         } finally {
             if (rs != null) {
                 rs.close();

@@ -1,15 +1,49 @@
 package view;
 
+
+
+/*----- imports padrao ----- */
+
 import database.*;
 import model.*;
-
-
 import java.util.Scanner;
 import controller.Controladora;
 import java.sql.SQLException;
 
 import java.util.Scanner;
 
+import view.ViewRegistrarOS;
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+public class teste
+{
+	public static void main(String[] args) throws SQLException, ConectException
+	{
+		/*
+		 * Scanner leitura = new Scanner(System.in);
+		
+		Controladora control = new Controladora();
+		
+		System.out.printf("Digite a serie do Eletronico: ");
+		String buscarEletronico = leitura.nextLine();
+		
+		boolean res = control.buscaEletronico(buscarEletronico);
+		
+		
+		System.out.println("resultado: " + res);*/
+		
+		
+		
+		ViewRegistrarOS view = new ViewRegistrarOS();
+		
+		
+		
+	}
+}
+
+
+
+/*------- buscando nome do cliente -----*/
 
 
 
@@ -38,36 +72,7 @@ public class teste
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
-import database.*;
-import model.*;
-
-
-import java.util.Scanner;
-import controller.Controladora;
-import java.sql.SQLException;
-
-import java.util.Scanner;
-
 public class teste {
    
 	public static void main(String[] args) throws SQLException, ConectException {
@@ -106,13 +111,7 @@ public class teste {
       
     }
 }
-
-
 */
-
-
-
-
 
 
 
@@ -120,11 +119,8 @@ public class teste {
 
 
 
+/*
 
-import java.sql.SQLException;
-import java.util.Scanner;
-
-import controller.Controladora;
 public class teste {
     public static void main(String[] args) throws ConectException {
         @SuppressWarnings("resource")
@@ -166,7 +162,7 @@ public class teste {
 }
 
 
-
+*/
 
 
 /*-----busca funcionario-----*/
@@ -174,14 +170,8 @@ public class teste {
 
 
 
-
-
 /*
-import java.sql.SQLException;
-import database.FuncionarioDAO;
-import database.ConectException;
-import model.Funcionario;
-import java.util.Scanner;
+
 
 public class teste {
     public static void main(String[] args) {
@@ -225,18 +215,9 @@ public class teste {
 
 
 
-
 /*-----Busca Cliente-----*/
 
 /*
-
-import java.sql.SQLException;
-import database.ClienteDAO;
-import database.ConectException;
-import model.Cliente;
-import java.util.Scanner;
-
-
 public class teste {
     public static void main(String[] args) {
         ClienteDAO clienteDAO = new ClienteDAO();
@@ -272,45 +253,15 @@ public class teste {
         }
     }
 }
-
-
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 /*----- inserindo cliente-----*/
 
-/*
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Scanner;
-import database.Conect; // Importa a classe Connect da package database
-import database.ConectException;
 
+
+/*
 public class teste {
     @SuppressWarnings("resource")
 	public static void main(String[] args) {

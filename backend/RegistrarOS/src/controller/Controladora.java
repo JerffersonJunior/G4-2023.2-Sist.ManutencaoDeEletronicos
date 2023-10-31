@@ -12,6 +12,8 @@ public class Controladora
     OSDAO OSD = new OSDAO();
     
     Cliente cli;
+    
+    
 
 	     
     
@@ -80,8 +82,7 @@ public class Controladora
 	
 	/* ------- verificar ----- */
 	
-	
-	
+
 	
 	public Cliente buscaCliente(String telefone) throws SQLException, ConectException
 	{
@@ -95,7 +96,14 @@ public class Controladora
         OSD.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
     }
     
-
+    
+    
+    public boolean buscaEletronico(String serie)throws SQLException, ConectException
+    {
+    	return EletronicoDAO.buscaEletronico(serie);
+    	
+    	
+    }
 
 
 	
@@ -103,6 +111,17 @@ public class Controladora
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
