@@ -14,23 +14,12 @@ import java.util.Scanner;
 
 import view.ViewRegistrarOS;
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-
+/*
 public class teste
 {
 	public static void main(String[] args) throws SQLException, ConectException
 	{
-		/*
-		 * Scanner leitura = new Scanner(System.in);
 		
-		Controladora control = new Controladora();
-		
-		System.out.printf("Digite a serie do Eletronico: ");
-		String buscarEletronico = leitura.nextLine();
-		
-		boolean res = control.buscaEletronico(buscarEletronico);
-		
-		
-		System.out.println("resultado: " + res);*/
 		
 		
 		
@@ -40,6 +29,8 @@ public class teste
 		
 	}
 }
+
+*/
 
 
 
@@ -119,8 +110,8 @@ public class teste {
 
 
 
-/*
 
+/*
 public class teste {
     public static void main(String[] args) throws ConectException {
         @SuppressWarnings("resource")
@@ -160,9 +151,9 @@ public class teste {
         }
     }
 }
-
-
 */
+
+
 
 
 /*-----busca funcionario-----*/

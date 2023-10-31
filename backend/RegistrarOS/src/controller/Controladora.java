@@ -89,15 +89,26 @@ public class Controladora
 		return ClienteDAO.buscaCliente(telefone);
 	}
 	
-
+/*
     public void adicionarOS(int id, String dataInicio, String reclamacao, String analiseTecnico, String status, String dataFechamento, float valorManutencao) throws SQLException, ConectException 
     {
     	
         OSD.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, status, dataFechamento, valorManutencao);
     }
     
+   */
+	
+	
+	public void adicionarOS(int id, String dataInicio, String reclamacao, String analiseTecnico, String status, String dataFechamento, float valorManutencao) throws SQLException, ConectException 
+    {
+
+        OSD.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, "Em análise", dataFechamento, valorManutencao);
+    }
     
-    
+	
+	
+	
+	
     public boolean buscaEletronico(String serie)throws SQLException, ConectException
     {
     	return EletronicoDAO.buscaEletronico(serie);

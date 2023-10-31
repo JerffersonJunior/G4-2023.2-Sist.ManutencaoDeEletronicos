@@ -319,10 +319,10 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
                 analiseTecnicoFocusLost(evt);
             }
         });
-
+        
         tecnico.setBackground(new java.awt.Color(217, 217, 217));
         tecnico.setForeground(new java.awt.Color(153, 153, 153));
-        tecnico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TÉCNICO*", "Item 1", "Item 2", "Item 3" }));
+        tecnico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TÉCNICO*", "Vinicius Gonçalves", "Catarina Alabim", "Bruno Watanabe" }));
         tecnico.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         tecnico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -363,19 +363,24 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
            
         });
         
-        finalizar.addActionListener(e->{
-        	
-        	Float manutencaoValor = Float.valueOf(valorManutencao.getText());
-        	
-        	try {
-				control.adicionarOS(0, dataInicio.getText(), reclamacao.getText(), 
-						analiseTecnico.getText(), status.getText(), null, manutencaoValor);
-			} catch (SQLException | ConectException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-       
-        	
+        finalizar.addActionListener(e -> {
+            if (valorManutencao.getText().equals("VALOR DA MANUTENÇÃO")) {
+                Float manutencaoValor = 0.0f; // Defina manutencaoValor como 0
+                try {
+                    control.adicionarOS(0, dataInicio.getText(), reclamacao.getText(), 
+                            analiseTecnico.getText(), status.getText(), null, manutencaoValor);
+                } catch (SQLException | ConectException e1) {
+                    e1.printStackTrace();
+                }
+            } else {
+                Float manutencaoValor = Float.valueOf(valorManutencao.getText());
+                try {
+                    control.adicionarOS(0, dataInicio.getText(), reclamacao.getText(), 
+                            analiseTecnico.getText(), status.getText(), null, manutencaoValor);
+                } catch (SQLException | ConectException e1) {
+                    e1.printStackTrace();
+                }
+            }
         });
 
         nomeCliente.setBackground(new java.awt.Color(194, 213, 236));
@@ -578,7 +583,8 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
 
     private void finalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarActionPerformed
         // TODO add your handling code here:
-        if (telefone.getText().equals("TELEFONE*")) {
+        
+    	if (telefone.getText().equals("TELEFONE*")) {
         mensagemDeErro("OCORREU UM ERRO", "TELEFONE NÃO PREENCHIDO");
         }
         if (serie.getText().equals("SÉRIE*")) {

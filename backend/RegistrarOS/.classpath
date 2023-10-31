@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/conector-sql"/>
 	<classpathentry kind="lib" path="C:/Users/wagro/OneDrive/Documentos/java-libis/jdbc-connectors/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/conect"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
