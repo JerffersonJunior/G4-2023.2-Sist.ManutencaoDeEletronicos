@@ -50,7 +50,6 @@ public class viewCancelarOS extends javax.swing.JFrame {
     okButton.setForeground(Color.WHITE);
     okButton.addActionListener(e -> dialog.dispose());
     okButton.setFocusable(false);
-    okButton.setBorder(new BevelBorder(BevelBorder.RAISED));
     okButton.setPreferredSize(new Dimension(50, 30));
     
     buttonPanel.add(okButton);
@@ -91,7 +90,6 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
     okButton.setForeground(Color.WHITE);
     okButton.addActionListener(e -> dialog.dispose());
     okButton.setFocusable(false);
-    okButton.setBorder(new BevelBorder(BevelBorder.RAISED));
     okButton.setPreferredSize(new Dimension(50, 30));
     
     buttonPanel.add(okButton);
@@ -126,7 +124,6 @@ private int mensagemDeConfirmacao(String titulo, String mensagem) {
     JPanel buttonPanel = new JPanel();
     buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
     buttonPanel.setBackground(new Color(0xFBB93A)); // Amarelo #fbb93a
-
     JButton simButton = new JButton("SIM");
     simButton.setBackground(new Color(0x80270C));
     simButton.setForeground(Color.WHITE);
@@ -136,7 +133,7 @@ private int mensagemDeConfirmacao(String titulo, String mensagem) {
         onSimButtonClicked();
     });
     simButton.setFocusable(false);
-    simButton.setBorder(new BevelBorder(BevelBorder.RAISED));
+
     simButton.setPreferredSize(new Dimension(80, 30));
 
     JButton naoButton = new JButton("NÃO");
@@ -148,7 +145,6 @@ private int mensagemDeConfirmacao(String titulo, String mensagem) {
         onNaoButtonClicked();
     });
     naoButton.setFocusable(false);
-    naoButton.setBorder(new BevelBorder(BevelBorder.RAISED));
     naoButton.setPreferredSize(new Dimension(80, 30));
 
     buttonPanel.add(naoButton); // Adiciona o botão "Não" à esquerda
@@ -260,7 +256,6 @@ private void onNaoButtonClicked() {
         gerenciarEletronico.setBackground(new java.awt.Color(255, 200, 58));
         gerenciarEletronico.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         gerenciarEletronico.setText("GERENCIAR ELETRÔNICO");
-        gerenciarEletronico.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         gerenciarEletronico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gerenciarEletronico.setFocusable(false);
         gerenciarEletronico.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -272,7 +267,6 @@ private void onNaoButtonClicked() {
         gerenciarCliente.setBackground(new java.awt.Color(255, 200, 58));
         gerenciarCliente.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         gerenciarCliente.setText("GERENCIAR CLIENTE");
-        gerenciarCliente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         gerenciarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gerenciarCliente.setFocusable(false);
         gerenciarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -284,7 +278,6 @@ private void onNaoButtonClicked() {
         historicoOs.setBackground(new java.awt.Color(255, 200, 58));
         historicoOs.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         historicoOs.setText("HISTÓRICO DE OS'S");
-        historicoOs.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         historicoOs.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         historicoOs.setFocusable(false);
         historicoOs.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -296,7 +289,6 @@ private void onNaoButtonClicked() {
         cancelarOS.setBackground(new java.awt.Color(255, 200, 58));
         cancelarOS.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         cancelarOS.setText("CANCELAR OS");
-        cancelarOS.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cancelarOS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancelarOS.setFocusable(false);
         cancelarOS.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -313,7 +305,6 @@ private void onNaoButtonClicked() {
         registrarOS.setBackground(new java.awt.Color(255, 200, 58));
         registrarOS.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         registrarOS.setText("REGISTRAR OS");
-        registrarOS.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         registrarOS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrarOS.setFocusable(false);
         registrarOS.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -386,7 +377,6 @@ private void onNaoButtonClicked() {
 
         buscaOS.setBackground(new java.awt.Color(229, 229, 229));
         buscaOS.setIcon(new javax.swing.ImageIcon(getClass().getResource("lupa1.png"))); // NOI18N
-        buscaOS.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buscaOS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buscaOS.setFocusable(false);
         buscaOS.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -511,7 +501,6 @@ private void onNaoButtonClicked() {
         confirmaCancelarOS.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirmaCancelarOS.setForeground(new java.awt.Color(255, 255, 255));
         confirmaCancelarOS.setText("CANCELAR OS");
-        confirmaCancelarOS.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         confirmaCancelarOS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         confirmaCancelarOS.setFocusable(false);
         confirmaCancelarOS.addActionListener(new java.awt.event.ActionListener() {
