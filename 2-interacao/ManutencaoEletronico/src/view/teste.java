@@ -13,9 +13,18 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import view.ViewRegistrarOS;
+import model.*;
+import java.util.Scanner;
+import controller.Controladora;
+import java.sql.SQLException;
+
+import java.util.Scanner;
+
+import view.ViewRegistrarOS;
+import view.viewCancelarOS;
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 
-
+/*
 public class teste
 {
 	public static void main(String[] args) throws SQLException, ConectException
@@ -37,20 +46,9 @@ public class teste
 		
 	}
 }
+*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*
 public class teste
 {
 	public static void main(String[] args) throws SQLException, ConectException
@@ -58,15 +56,18 @@ public class teste
 		
 		
 		
+		//ViewRegistrarOS view = new ViewRegistrarOS();
+		//view.setVisible(true);
 		
-		ViewRegistrarOS view = new ViewRegistrarOS();
+		viewCancelarOS view = new viewCancelarOS();
+		view.setVisible(true);
 		
 		
 		
 	}
 }
 
-*/
+
 
 
 
