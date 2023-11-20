@@ -46,6 +46,7 @@ public class viewCancelarOS extends javax.swing.JFrame {
     buttonPanel.setBackground(new Color(0xF16C6D));
 
     JButton okButton = new JButton("OK");
+    okButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     okButton.setBackground(new Color(0x7f1718));
     okButton.setForeground(Color.WHITE);
     okButton.addActionListener(e -> dialog.dispose());
@@ -86,6 +87,7 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
     buttonPanel.setBackground(new Color(0x62d47c));
 
     JButton okButton = new JButton("OK");
+    okButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     okButton.setBackground(new Color(0x009367));
     okButton.setForeground(Color.WHITE);
     okButton.addActionListener(e -> dialog.dispose());
@@ -125,6 +127,7 @@ private int mensagemDeConfirmacao(String titulo, String mensagem) {
     buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
     buttonPanel.setBackground(new Color(0xFBB93A)); // Amarelo #fbb93a
     JButton simButton = new JButton("SIM");
+    simButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     simButton.setBackground(new Color(0x80270C));
     simButton.setForeground(Color.WHITE);
     simButton.addActionListener(e -> {
@@ -146,7 +149,7 @@ private int mensagemDeConfirmacao(String titulo, String mensagem) {
     });
     naoButton.setFocusable(false);
     naoButton.setPreferredSize(new Dimension(80, 30));
-
+    naoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     buttonPanel.add(naoButton); // Adiciona o botão "Não" à esquerda
     buttonPanel.add(Box.createHorizontalStrut(205));
     buttonPanel.add(simButton); // Adiciona o botão "Sim" à direita
@@ -161,7 +164,7 @@ private int mensagemDeConfirmacao(String titulo, String mensagem) {
 }
 
 private void onSimButtonClicked() {
-    mensagemDeSucesso("SUCESSO", "OS CANCELADA COM SUCESSO");
+    mensagemDeSucesso("CONFIRMAÇÃO", "OS CANCELADA COM SUCESSO");
     painelAmarelo.setVisible(false);
     painelBranco.requestFocusInWindow();
     id.setText("ID OS*");
