@@ -18,7 +18,6 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.border.BevelBorder;
 
 import controller.Controladora;
 
@@ -35,87 +34,91 @@ public class ViewRegistrarOS extends javax.swing.JFrame {
 	Controladora control = new Controladora();
 
     
-private void mensagemDeErro(String titulo, String mensagem) {
-    JDialog dialog = new JDialog();
-    dialog.setTitle(titulo);
-    dialog.setModal(true);
-    dialog.setPreferredSize(new Dimension(400, 120));
+	private void mensagemDeErro(String titulo, String mensagem) {
+	    JDialog dialog = new JDialog();
+	    dialog.setTitle(titulo);
+	    dialog.setModal(true);
+	    dialog.setPreferredSize(new Dimension(400, 120));
 
-    JPanel panel = new JPanel();
-    panel.setBackground(new Color(0xF16C6D));
-    panel.setLayout(new BorderLayout());
+	    JPanel panel = new JPanel();
+	    panel.setBackground(new Color(0xF16C6D));
+	    panel.setLayout(new BorderLayout());
 
-    JLabel label = new JLabel(mensagem);
-    label.setForeground(Color.WHITE);
-    label.setHorizontalAlignment(SwingConstants.CENTER); // Centralize o texto horizontalmente
-    label.setVerticalAlignment(SwingConstants.CENTER); // Centralize o texto verticalmente
-    label.setOpaque(true);
-    label.setBackground(new Color(0xf16c6d));
+	    JLabel label = new JLabel(mensagem);
+	    label.setForeground(Color.WHITE);
+	    label.setHorizontalAlignment(SwingConstants.CENTER); // Centralize o texto horizontalmente
+	    label.setVerticalAlignment(SwingConstants.CENTER); // Centralize o texto verticalmente
+	    label.setOpaque(true);
+	    label.setBackground(new Color(0xf16c6d));
 
-    panel.add(label, BorderLayout.CENTER);
+	    panel.add(label, BorderLayout.CENTER);
 
-    JPanel buttonPanel = new JPanel();
-    buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-    buttonPanel.setBackground(new Color(0xF16C6D));
+	    JPanel buttonPanel = new JPanel();
+	    buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+	    buttonPanel.setBackground(new Color(0xF16C6D));
 
-    JButton okButton = new JButton("OK");
-    okButton.setBackground(new Color(0x7f1718));
-    okButton.setForeground(Color.WHITE);
-    okButton.addActionListener(e -> dialog.dispose());
-    okButton.setFocusable(false);
-    okButton.setBorder(new BevelBorder(BevelBorder.RAISED));
-    okButton.setPreferredSize(new Dimension(50, 30));
-    
-    buttonPanel.add(okButton);
+	    JButton okButton = new JButton("OK");
+	    okButton.setBackground(new Color(0x7f1718));
+	    okButton.setForeground(Color.WHITE);
+	    okButton.addActionListener(e -> dialog.dispose());
+	    okButton.setFocusable(false);
+	    okButton.setPreferredSize(new Dimension(50, 30));
+	    
+	    buttonPanel.add(okButton);
 
-    panel.add(buttonPanel, BorderLayout.SOUTH);
+	    panel.add(buttonPanel, BorderLayout.SOUTH);
 
-    dialog.add(panel);
-    dialog.pack();
-    dialog.setLocationRelativeTo(this);
-    dialog.setVisible(true);
-}
+	    dialog.add(panel);
+	    dialog.pack();
+	    dialog.setLocationRelativeTo(this);
+	    dialog.setVisible(true);
+	}
 
-private void mensagemDeSucesso(String titulo, String mensagem) {
-    JDialog dialog = new JDialog();
-    dialog.setTitle(titulo);
-    dialog.setModal(true);
-    dialog.setPreferredSize(new Dimension(400, 120));
+	private void mensagemDeSucesso(String titulo, String mensagem) {
+	    JDialog dialog = new JDialog();
+	    dialog.setTitle(titulo);
+	    dialog.setModal(true);
+	    dialog.setPreferredSize(new Dimension(400, 120));
 
-    JPanel panel = new JPanel();
-    panel.setBackground(new Color(0xF16C6D));
-    panel.setLayout(new BorderLayout());
+	    JPanel panel = new JPanel();
+	    panel.setBackground(new Color(0xF16C6D));
+	    panel.setLayout(new BorderLayout());
 
-    JLabel label = new JLabel(mensagem);
-    label.setForeground(Color.WHITE);
-    label.setHorizontalAlignment(SwingConstants.CENTER); // Centralize o texto horizontalmente
-    label.setVerticalAlignment(SwingConstants.CENTER); // Centralize o texto verticalmente
-    label.setOpaque(true);
-    label.setBackground(new Color(0x62d47c));
+	    JLabel label = new JLabel(mensagem);
+	    label.setForeground(Color.WHITE);
+	    label.setHorizontalAlignment(SwingConstants.CENTER); // Centralize o texto horizontalmente
+	    label.setVerticalAlignment(SwingConstants.CENTER); // Centralize o texto verticalmente
+	    label.setOpaque(true);
+	    label.setBackground(new Color(0x62d47c));
 
-    panel.add(label, BorderLayout.CENTER);
+	    panel.add(label, BorderLayout.CENTER);
 
-    JPanel buttonPanel = new JPanel();
-    buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-    buttonPanel.setBackground(new Color(0x62d47c));
+	    JPanel buttonPanel = new JPanel();
+	    buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+	    buttonPanel.setBackground(new Color(0x62d47c));
 
-    JButton okButton = new JButton("OK");
-    okButton.setBackground(new Color(0x009367));
-    okButton.setForeground(Color.WHITE);
-    okButton.addActionListener(e -> dialog.dispose());
-    okButton.setFocusable(false);
-    okButton.setBorder(new BevelBorder(BevelBorder.RAISED));
-    okButton.setPreferredSize(new Dimension(50, 30));
-    
-    buttonPanel.add(okButton);
+	    JButton okButton = new JButton("OK");
+	    okButton.setBackground(new Color(0x009367));
+	    okButton.setForeground(Color.WHITE);
+	    okButton.addActionListener(e -> dialog.dispose());
+	    okButton.setFocusable(false);
+	    okButton.setPreferredSize(new Dimension(50, 30));
+	    
+	    buttonPanel.add(okButton);
 
-    panel.add(buttonPanel, BorderLayout.SOUTH);
+	    panel.add(buttonPanel, BorderLayout.SOUTH);
 
-    dialog.add(panel);
-    dialog.pack();
-    dialog.setLocationRelativeTo(this);
-    dialog.setVisible(true);
-}
+	    dialog.add(panel);
+	    dialog.pack();
+	    dialog.setLocationRelativeTo(this);
+	    dialog.setVisible(true);
+	}
+	
+    private void setFocusOnPanel() {
+        // Define o foco no painel branco em vez da caixa de telefone
+        painelBranco.requestFocusInWindow();
+    }
+
     /**
      * Creates new form viewRegistrarOs
      */
@@ -135,15 +138,19 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        painelBranco = new javax.swing.JPanel();
+    	painelBranco = new javax.swing.JPanel();
         painelVerde = new javax.swing.JPanel();
+        nomeFunc = new javax.swing.JTextField();
         funcao = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
         gerenciarEletronico = new javax.swing.JButton();
         gerenciarCliente = new javax.swing.JButton();
         historicoOs = new javax.swing.JButton();
-        telefone = new javax.swing.JTextField();
+        cancelarOS = new javax.swing.JButton();
+        registrarOS = new javax.swing.JButton();
+        nomeCliente = new javax.swing.JTextField();
         id = new javax.swing.JTextField();
+        telefone = new javax.swing.JTextField();
+        buscaCliente = new javax.swing.JButton();
         serie = new javax.swing.JTextField();
         dataInicio = new javax.swing.JTextField();
         reclamacao = new javax.swing.JTextField();
@@ -152,8 +159,6 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
         valorManutencao = new javax.swing.JTextField();
         status = new javax.swing.JTextField();
         finalizar = new javax.swing.JButton();
-        nomeCliente = new javax.swing.JTextField();
-        buscaCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Manutenção de Eletrônicos");
@@ -161,28 +166,29 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
         painelBranco.setBackground(new java.awt.Color(255, 255, 255));
 
         painelVerde.setBackground(new java.awt.Color(0, 147, 103));
+        painelVerde.setPreferredSize(new java.awt.Dimension(197, 322));
+
+        nomeFunc.setBackground(new java.awt.Color(0, 106, 68));
+        nomeFunc.setForeground(new java.awt.Color(255, 255, 255));
+        nomeFunc.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nomeFunc.setText("JURACI A. DOS ANJOS");
+        nomeFunc.setBorder(null);
+        nomeFunc.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nomeFunc.setFocusable(false);
+        nomeFunc.setRequestFocusEnabled(false);
 
         funcao.setBackground(new java.awt.Color(0, 106, 68));
-        funcao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         funcao.setForeground(new java.awt.Color(255, 255, 255));
         funcao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         funcao.setText("RECEPCIONISTA");
         funcao.setBorder(null);
         funcao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        funcao.setFocusable(false);
         funcao.setRequestFocusEnabled(false);
-
-        jTextField1.setBackground(new java.awt.Color(0, 106, 68));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("JURACI A. DOS ANJOS");
-        jTextField1.setBorder(null);
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTextField1.setRequestFocusEnabled(false);
 
         gerenciarEletronico.setBackground(new java.awt.Color(255, 200, 58));
         gerenciarEletronico.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         gerenciarEletronico.setText("GERENCIAR ELETRÔNICO");
-        gerenciarEletronico.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         gerenciarEletronico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gerenciarEletronico.setFocusable(false);
         gerenciarEletronico.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,7 +200,6 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
         gerenciarCliente.setBackground(new java.awt.Color(255, 200, 58));
         gerenciarCliente.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         gerenciarCliente.setText("GERENCIAR CLIENTE");
-        gerenciarCliente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         gerenciarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gerenciarCliente.setFocusable(false);
         gerenciarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,7 +211,6 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
         historicoOs.setBackground(new java.awt.Color(255, 200, 58));
         historicoOs.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         historicoOs.setText("HISTÓRICO DE OS'S");
-        historicoOs.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         historicoOs.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         historicoOs.setFocusable(false);
         historicoOs.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -215,38 +219,87 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
             }
         });
 
+        cancelarOS.setBackground(new java.awt.Color(255, 200, 58));
+        cancelarOS.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        cancelarOS.setText("CANCELAR OS");
+        cancelarOS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelarOS.setFocusable(false);
+        cancelarOS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelarOSMouseClicked(evt);
+            }
+        });
+        cancelarOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarOSActionPerformed(evt);
+            }
+        });
+
+        registrarOS.setBackground(new java.awt.Color(255, 200, 58));
+        registrarOS.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        registrarOS.setText("REGISTRAR OS");
+        registrarOS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        registrarOS.setFocusable(false);
+        registrarOS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registrarOSMouseClicked(evt);
+            }
+        });
+
+
         javax.swing.GroupLayout painelVerdeLayout = new javax.swing.GroupLayout(painelVerde);
         painelVerde.setLayout(painelVerdeLayout);
         painelVerdeLayout.setHorizontalGroup(
             painelVerdeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelVerdeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(funcao, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
             .addGroup(painelVerdeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelVerdeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gerenciarEletronico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(gerenciarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nomeFunc, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(gerenciarEletronico, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(gerenciarCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(historicoOs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(painelVerdeLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(funcao, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(cancelarOS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(registrarOS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         painelVerdeLayout.setVerticalGroup(
             painelVerdeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelVerdeLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(38, 38, 38)
                 .addComponent(funcao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
+                .addComponent(nomeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(gerenciarEletronico, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(gerenciarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(historicoOs, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(registrarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cancelarOS, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        nomeCliente.setBackground(new java.awt.Color(194, 213, 236));
+        nomeCliente.setForeground(new java.awt.Color(102, 102, 102));
+        nomeCliente.setText("NOME DO CLIENTE");
+        nomeCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        nomeCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nomeCliente.setRequestFocusEnabled(false);
+
+        id.setEditable(false);
+        id.setBackground(new java.awt.Color(194, 213, 236));
+        id.setForeground(new java.awt.Color(102, 102, 102));
+        id.setText("ID OS");
+        id.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        id.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        id.setRequestFocusEnabled(false);
 
         telefone.setBackground(new java.awt.Color(217, 217, 217));
         telefone.setForeground(new java.awt.Color(153, 153, 153));
@@ -261,13 +314,22 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
             }
         });
 
-        id.setEditable(false);
-        id.setBackground(new java.awt.Color(194, 213, 236));
-        id.setForeground(new java.awt.Color(102, 102, 102));
-        id.setText("ID");
-        id.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        id.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        id.setRequestFocusEnabled(false);
+        buscaCliente.setBackground(new java.awt.Color(229, 229, 229));
+        buscaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("lupa1.png"))); // NOI18N
+        buscaCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buscaCliente.setFocusPainted(false);
+        buscaCliente.setFocusable(false);
+        
+        buscaCliente.addActionListener( e-> {
+        	
+        	try {
+				nomeCliente.setText(control.buscaCliente(telefone.getText()));
+			} catch (ConectException | SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+        	 
+        });
 
         serie.setBackground(new java.awt.Color(217, 217, 217));
         serie.setForeground(new java.awt.Color(153, 153, 153));
@@ -322,13 +384,11 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
                 analiseTecnicoFocusLost(evt);
             }
         });
-        
+
         tecnico.setBackground(new java.awt.Color(217, 217, 217));
         tecnico.setForeground(new java.awt.Color(153, 153, 153));
-        tecnico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TÉCNICO*", "Vinicius Gonçalves", "Catarina Alabim", "Bruno Watanabe" , "asaasas" }));
-        tecnico.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tecnico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TÉCNICO*", "Item 1", "Item 2", "Item 3" }));
         tecnico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         valorManutencao.setBackground(new java.awt.Color(217, 217, 217));
         valorManutencao.setForeground(new java.awt.Color(153, 153, 153));
         valorManutencao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -342,28 +402,25 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
                 valorManutencaoFocusLost(evt);
             }
         });
-
+        
         status.setBackground(new java.awt.Color(255, 200, 58));
         status.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         status.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         status.setText("STATUS");
-        status.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         status.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         status.setRequestFocusEnabled(false);
+        status.setVisible(false);
 
         finalizar.setBackground(new java.awt.Color(116, 201, 114));
         finalizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         finalizar.setForeground(new java.awt.Color(255, 255, 255));
         finalizar.setText("Finalizar");
-        finalizar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         finalizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         finalizar.setFocusable(false);
         finalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 finalizarActionPerformed(evt);
             }
-            
-           
         });
         
         finalizar.addActionListener(e -> {
@@ -388,44 +445,19 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
 
         });
 
-        nomeCliente.setBackground(new java.awt.Color(194, 213, 236));
-        nomeCliente.setForeground(new java.awt.Color(102, 102, 102));
-        nomeCliente.setText("NOME DO CLIENTE");
-        nomeCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        nomeCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        nomeCliente.setRequestFocusEnabled(false);
-
-        buscaCliente.setBackground(new java.awt.Color(229, 229, 229));
-        buscaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("lupa.png"))); // NOI18N
-        buscaCliente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buscaCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buscaCliente.setFocusPainted(false);
-        buscaCliente.setFocusable(false);
-        
-        buscaCliente.addActionListener( e-> {
-        	
-        	try {
-				nomeCliente.setText(control.buscaCliente(telefone.getText()));
-			} catch (ConectException | SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-        	 
-        });
-
         javax.swing.GroupLayout painelBrancoLayout = new javax.swing.GroupLayout(painelBranco);
         painelBranco.setLayout(painelBrancoLayout);
         painelBrancoLayout.setHorizontalGroup(
             painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelBrancoLayout.createSequentialGroup()
                 .addComponent(painelVerde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(33, 33, 33)
                 .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelBrancoLayout.createSequentialGroup()
                         .addComponent(tecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(valorManutencao, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(149, 149, 149)
                         .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(finalizar, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
@@ -433,47 +465,47 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
                         .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelBrancoLayout.createSequentialGroup()
                                 .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(buscaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(serie))
+                                .addComponent(serie, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE))
                             .addComponent(nomeCliente))
-                        .addGap(18, 18, 18)
-                        .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(id)
-                            .addComponent(dataInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)))
+                        .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelBrancoLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE))
+                            .addGroup(painelBrancoLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(dataInicio))))
                     .addComponent(reclamacao)
                     .addComponent(analiseTecnico))
-                .addGap(39, 39, 39))
+                .addGap(29, 29, 29))
         );
         painelBrancoLayout.setVerticalGroup(
             painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelVerde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelVerde, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
             .addGroup(painelBrancoLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(id)
-                    .addComponent(nomeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dataInicio)
-                    .addComponent(serie, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBrancoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(telefone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buscaCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(telefone, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(buscaCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(serie)
+                    .addComponent(dataInicio))
                 .addGap(18, 18, 18)
                 .addComponent(reclamacao, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(analiseTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(painelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tecnico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(tecnico, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(valorManutencao)
                     .addComponent(status, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(finalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(48, 48, 48))
+                .addGap(46, 46, 46))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -484,11 +516,11 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelBranco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(painelBranco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold> 
 
     private void telefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefoneFocusLost
         // TODO add your handling code here:
@@ -627,26 +659,57 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
     }
     }//GEN-LAST:event_finalizarActionPerformed
 
-    private void gerenciarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gerenciarClienteMouseClicked
+    private void gerenciarEletronicoMouseClicked(java.awt.event.MouseEvent evt) {                                                 
         // TODO add your handling code here:
         mensagemDeErro("AVISO", "EM CONSTRUÇÃO");
-    }//GEN-LAST:event_gerenciarClienteMouseClicked
+    }                                                
 
-    private void historicoOsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historicoOsMouseClicked
+    private void gerenciarClienteMouseClicked(java.awt.event.MouseEvent evt) {                                              
         // TODO add your handling code here:
         mensagemDeErro("AVISO", "EM CONSTRUÇÃO");
-    }//GEN-LAST:event_historicoOsMouseClicked
+    }                                             
 
-    private void gerenciarEletronicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gerenciarEletronicoMouseClicked
+    private void historicoOsMouseClicked(java.awt.event.MouseEvent evt) {                                         
         // TODO add your handling code here:
         mensagemDeErro("AVISO", "EM CONSTRUÇÃO");
-    }//GEN-LAST:event_gerenciarEletronicoMouseClicked
+    }                              
+    
+    private void registrarOSMouseClicked(java.awt.event.MouseEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                       
+
+    private void cancelarOSActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void cancelarOSMouseClicked(java.awt.event.MouseEvent evt) {                                        
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(() -> {
+            // Torna a janela atual invisível
+            this.setVisible(false);
+            
+            // Cria uma instância da viewCancelarOS
+            viewCancelarOS cancelarOS = new viewCancelarOS();
+            
+            // Torna a nova janela visível
+            cancelarOS.setVisible(true);
+            
+            // Certifique-se de fechar a janela atual quando a nova janela for fechada
+            cancelarOS.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                    // Torna a janela atual visível novamente
+                    setVisible(true);
+                }
+            });
+        });
+    }      
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+    	/* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -674,15 +737,11 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
             new ViewRegistrarOS().setVisible(true);
         });
     }
-
-    private void setFocusOnPanel() {
-        // Define o foco no painel branco em vez da caixa de telefone
-        painelBranco.requestFocusInWindow();
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    
+    // Variables declaration - do not modify                     
     private javax.swing.JTextField analiseTecnico;
     private javax.swing.JButton buscaCliente;
+    private javax.swing.JButton cancelarOS;
     private javax.swing.JTextField dataInicio;
     private javax.swing.JButton finalizar;
     private javax.swing.JTextField funcao;
@@ -690,17 +749,19 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
     private javax.swing.JButton gerenciarEletronico;
     private javax.swing.JButton historicoOs;
     private javax.swing.JTextField id;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nomeCliente;
+    private javax.swing.JTextField nomeFunc;
     private javax.swing.JPanel painelBranco;
     private javax.swing.JPanel painelVerde;
     private javax.swing.JTextField reclamacao;
+    private javax.swing.JButton registrarOS;
     private javax.swing.JTextField serie;
     private javax.swing.JTextField status;
     private javax.swing.JComboBox<String> tecnico;
     private javax.swing.JTextField telefone;
     private javax.swing.JTextField valorManutencao;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
+
 
     private Color newColor(int i) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
