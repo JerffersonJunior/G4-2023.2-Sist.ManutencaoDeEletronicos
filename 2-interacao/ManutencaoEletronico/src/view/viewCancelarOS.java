@@ -616,8 +616,6 @@ private void onNaoButtonClicked() {
 
     private void cancelarOSMouseClicked(java.awt.event.MouseEvent evt) {                                        
         // TODO add your handling code here:
-        mensagemDeErro("AVISO", "EM CONSTRUÇÃO");
-        
     }                                       
 
     private void cancelarOSActionPerformed(java.awt.event.ActionEvent evt) {                                           
@@ -746,7 +744,26 @@ private void onNaoButtonClicked() {
 
     private void registrarOSMouseClicked(java.awt.event.MouseEvent evt) {                                         
         // TODO add your handling code here:
-        mensagemDeErro("AVISO", "EM CONSTRUÇÃO");
+        java.awt.EventQueue.invokeLater(() -> {
+            // Torna a janela atual invisível
+            this.setVisible(false);
+            
+            // Cria uma instância da ViewRegistrarOS
+            ViewRegistrarOS registrarOS = new ViewRegistrarOS();
+            
+            // Torna a nova janela visível
+            registrarOS.setVisible(true);
+            
+            // Certifique-se de fechar a janela atual quando a nova janela for fechada
+            registrarOS.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                    // Torna a janela atual visível novamente
+                    setVisible(true);
+                }
+            });
+        });
+    }             
     }                                        
 
     private void confirmaCancelarOSActionPerformed(java.awt.event.ActionEvent evt) {                                                   
