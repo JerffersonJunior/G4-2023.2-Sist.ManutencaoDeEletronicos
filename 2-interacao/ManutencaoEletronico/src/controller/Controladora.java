@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import model.*;
 import database.*;
-
+import java.sql.Date;
 public class Controladora 
 {
     ClienteDAO cliDAO = new ClienteDAO();
@@ -15,18 +15,18 @@ public class Controladora
     
 
 	
-	public String buscaNome(String telefone) throws ConectException, SQLException
+	public String buscaCliente(String telefone) throws ConectException, SQLException
 	{
-		return ClienteDAO.buscaNome(telefone);
+		return ClienteDAO.buscaCliente(telefone);
 	}
 	
 	
 	
 	
-	public void adicionarOS(int id, String dataInicio, String reclamacao, String analiseTecnico, String status, String dataFechamento, float valorManutencao) throws SQLException, ConectException 
+	public void RegistrarOS(int id, String dataInicio, String reclamacao, String analiseTecnico, String status, String dataFechamento, float valorManutencao) throws SQLException, ConectException 
     {
 
-        OSD.adicionarOS(id, dataInicio, reclamacao, analiseTecnico, "Em análise", dataFechamento, valorManutencao);
+        OSD.RegistrarOS(id, dataInicio, reclamacao, analiseTecnico, "Em análise", dataFechamento, valorManutencao);
         
          
     }
@@ -37,6 +37,11 @@ public class Controladora
     	return EletronicoDAO.buscaEletronico(serie);
     	
     	
+    }
+    
+    public void cancelarOS(int id) throws SQLException, ConectException
+    {
+    	OSD.cancelarOS(id);
     }
     
     

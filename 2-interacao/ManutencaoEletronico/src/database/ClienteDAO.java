@@ -9,7 +9,7 @@ import model.Cliente;
 public class ClienteDAO 
 {
 
-	public static String buscaNome(String telefone) throws ConectException, SQLException
+	public static String buscaCliente(String telefone) throws ConectException, SQLException
 	{
 		Connection conexao = Conect.getConect();
 	    PreparedStatement stmt = null;

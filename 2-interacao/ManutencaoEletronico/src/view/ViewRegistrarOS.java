@@ -24,6 +24,8 @@ import controller.Controladora;
 
 import database.ConectException;
 
+import java.sql.Date;
+
 /**
  *
  * @author mendv
@@ -368,7 +370,7 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
             if (valorManutencao.getText().equals("VALOR DA MANUTENÇÃO")) {
                 Float manutencaoValor = 0.0f; // Defina manutencaoValor como 0
                 try {
-                    control.adicionarOS(0, dataInicio.getText(), reclamacao.getText(), 
+                    control.RegistrarOS(0, dataInicio.getText(), reclamacao.getText(), 
                             analiseTecnico.getText(), status.getText(), null, manutencaoValor);
                 } catch (SQLException | ConectException e1) {
                     e1.printStackTrace();
@@ -376,12 +378,14 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
             } else {
                 Float manutencaoValor = Float.valueOf(valorManutencao.getText());
                 try {
-                    control.adicionarOS(0, dataInicio.getText(), reclamacao.getText(), 
+                    control.RegistrarOS(0, dataInicio.getText(), reclamacao.getText(), 
                             analiseTecnico.getText(), status.getText(), null, manutencaoValor);
                 } catch (SQLException | ConectException e1) {
                     e1.printStackTrace();
                 }
             }
+
+
         });
 
         nomeCliente.setBackground(new java.awt.Color(194, 213, 236));
@@ -401,7 +405,7 @@ private void mensagemDeSucesso(String titulo, String mensagem) {
         buscaCliente.addActionListener( e-> {
         	
         	try {
-				nomeCliente.setText(control.buscaNome(telefone.getText()));
+				nomeCliente.setText(control.buscaCliente(telefone.getText()));
 			} catch (ConectException | SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

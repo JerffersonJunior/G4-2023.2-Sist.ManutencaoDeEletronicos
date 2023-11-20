@@ -33,9 +33,7 @@ public class FuncionarioDAO
 	                    rs.getString("email"),
 	                    rs.getString("senha"),
 	                    rs.getString("tipofuncionario")
-	                    
 
-	                    
 	                );
 	            }
 

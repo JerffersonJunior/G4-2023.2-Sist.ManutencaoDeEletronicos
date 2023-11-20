@@ -14,6 +14,42 @@ import java.util.Scanner;
 
 import view.ViewRegistrarOS;
 /*----------------------------------------------------------------------------------------------------------------------------------*/
+
+
+public class teste
+{
+	public static void main(String[] args) throws SQLException, ConectException
+	{
+		OSDAO OSD = new OSDAO();
+		
+		Scanner leitura = new Scanner(System.in);
+		
+		System.out.println("Digite o id");
+		
+		int id = leitura.nextInt();
+		
+		OSD.cancelarOS(id);
+		
+		
+		
+		
+		
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 public class teste
 {
@@ -143,7 +179,7 @@ public class teste {
 
 
         try {
-            contro.adicionarOS(0, dataInicio, reclamacao, analiseTecnico, status, null, valorManutencao);
+            contro.RegistrarOS(0, dataInicio, reclamacao, analiseTecnico, status, null, valorManutencao);
             System.out.println("OS inserida com sucesso no banco de dados.");
         } catch (SQLException e) {
             e.printStackTrace();

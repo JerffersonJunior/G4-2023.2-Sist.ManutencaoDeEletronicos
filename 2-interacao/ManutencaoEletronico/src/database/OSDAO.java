@@ -3,6 +3,7 @@ package database;
 
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,10 +11,11 @@ import java.sql.SQLException;
 import model.OS;
 
 
-public class OSDAO {
+public class OSDAO 
+{
     
  
-	public void adicionarOS(int id, String dataInicio, String reclamacao, String analiseTecnico, String status, String dataFechamento, float valorManutencao) throws SQLException 
+	public void RegistrarOS(int id, String dataInicio, String reclamacao, String analiseTecnico, String status, String dataFechamento, float valorManutencao) throws SQLException 
 	{
 	       Connection conexao = null;
 	       
@@ -42,15 +44,7 @@ public class OSDAO {
 	
 	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	public OS buscaOS(int id) throws SQLException, ConectException 
     {
@@ -93,20 +87,44 @@ public class OSDAO {
                 conexao.close();
             }
         }
-    
-	
-	
 
-
-		
 	}
-	
-	
-	
-	
+	public void cancelarOS(int id) throws SQLException, ConectException {
+	    Connection conexao = null;
+	    PreparedStatement stmt = null;
 
+	    try {
+	        conexao = Conect.getConect();
+	        System.out.println(conexao);
 
+	        String updateQuery = "UPDATE os SET status = 'cancelado' WHERE id = ?";
+	        stmt = conexao.prepareStatement(updateQuery);
+	        stmt.setInt(1, id);
+
+	        int linhasAfetadas = stmt.executeUpdate();
+
+	        if (linhasAfetadas > 0) {
+	            System.out.println("Ordem de Serviço cancelada com sucesso.");
+	        } else {
+	            System.out.println("A Ordem de Serviço com o ID " + id + " não foi encontrada.");
+	        }
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        throw e;
+	    } finally {
+	   
+	        if (stmt != null) {
+	            stmt.close();
+	        }
+	        if (conexao != null) {
+	            conexao.close();
+	        }
+	    }
+	}
 }
+
+
 
 
 
